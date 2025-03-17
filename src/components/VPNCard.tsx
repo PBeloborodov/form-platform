@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeaderCard from "./header-card";
 import ItemCard from "./item-card";
+import { VideoIcon } from "../assets/svg-componets/arrow-down copy";
 
 const MOC_DATA: ItemCard[] = [
   {
@@ -21,17 +22,37 @@ const MOC_DATA: ItemCard[] = [
   },
   {
     icon: "2",
-    text: "Скачать приложение",
+    text: "Импортировать VPN в приложение",
     btns: [
       {
-        text: "Скачать из Microsoft Store",
+        text: "Импортировать",
         onClick: () => {
-          window.location.href = "https://yande.ru";
+          // window.location.href = "https://yande.ru";
         },
       },
+    ],
+  },
+  {
+    icon: <VideoIcon />,
+    text: "Видеоинструкция",
+    btns: [
       {
-        text: "Скачать .exe файл",
-        onClick: () => {},
+        text: "Смотреть",
+        onClick: () => {
+          // window.location.href = "https://yande.ru";
+        },
+      },
+    ],
+  },
+  {
+    icon: <VideoIcon />,
+    text: "Читать подробную инструкцию",
+    btns: [
+      {
+        text: "Читать",
+        onClick: () => {
+          // window.location.href = "https://yande.ru";
+        },
       },
     ],
   },

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import ArrowDown from "../assets/arrow-down.svg";
+import { ArrowDown } from "../assets/svg-componets/arrow-down";
 interface HeaderCardProps {
   setIsShow: (v: boolean) => void;
   isShow: boolean;
@@ -21,7 +21,7 @@ const HeaderCard: FC<HeaderCardProps> = ({ setIsShow, isShow }) => {
         </div>
       </div>
       <div
-        className="cursor-pointer"
+        className="cursor-pointer pl-2"
         onClick={() => {
           setIsShow(!isShow);
         }}
