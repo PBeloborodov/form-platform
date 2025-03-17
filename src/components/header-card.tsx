@@ -1,5 +1,5 @@
 import { FC } from "react";
-
+import ArrowDown from "../assets/arrow-down.svg";
 interface HeaderCardProps {
   setIsShow: (v: boolean) => void;
   isShow: boolean;
@@ -26,7 +26,7 @@ const HeaderCard: FC<HeaderCardProps> = ({ setIsShow, isShow }) => {
           setIsShow(!isShow);
         }}
       >
-        arrow
+        <ArrowDown />
       </div>
     </div>
   );
