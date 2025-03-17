@@ -1,17 +1,13 @@
 import React from "react";
-import { AddPlatformForm } from "./components/AddPlatformForm";
-import { AddAppForm } from "./components/add-app-form";
-import { AppDisplay } from "./components/AppDisplay";
 import "./App.css";
+import { VPNCard } from "./components/VPNCard";
 
-const App = () => {
+function App() {
   return (
     <div className="app">
-      <AddPlatformForm />
-      <AddAppForm />
-      <AppDisplay />
+      <VPNCard />
     </div>
   );
-};
+}
 
 export default App;
