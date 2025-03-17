@@ -4,6 +4,40 @@ const style = {
   btn: "p-2 border-2 rounded-2xl border-[#289fd9] hover:not-focus:bg-[#289fd9] hover:text-white cursor-pointer transition text-[#289fd9]",
 };
 
+const MOC_DATA = [
+  {
+    icon: 1,
+    text: "Скачать приложение",
+    btns: [
+      {
+        text: "Скачать из Microsoft Store",
+        onClick: () => {
+          window.location.href = "https://yande.ru";
+        },
+      },
+      {
+        text: "Скачать .exe файл",
+        onClick: () => {},
+      },
+    ],
+  },
+  {
+    icon: 2,
+    text: "Скачать приложение",
+    btns: [
+      {
+        text: "Скачать из Microsoft Store",
+        onClick: () => {
+          window.location.href = "https://yande.ru";
+        },
+      },
+      {
+        text: "Скачать .exe файл",
+        onClick: () => {},
+      },
+    ],
+  },
+];
 export const VPNCard = () => {
   const [isShow, setIsShow] = useState(true);
   return (
@@ -30,31 +64,27 @@ export const VPNCard = () => {
           arrow
         </div>
       </div>
-      <div
-        className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-          isShow ? "max-h-40" : "max-h-0"
-        }`}
-      >
-        <div className={`flex p-6 bg-[#f5f5f5] `}>
-          <div className="flex flex-1/3 items-center">
-            <div className="flex items-center justify-center  bg-[#bdff1c] font-semibold w-[44px] h-[44px]  rounded-md">
-              1
+      {MOC_DATA.map((item) => (
+        <div
+          className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+            isShow ? "max-h-40" : "max-h-0"
+          }`}
+        >
+          <div className={`flex p-6 bg-[#f5f5f5] `}>
+            <div className="flex flex-1/3 items-center">
+              <div className="flex items-center justify-center  bg-[#bdff1c] font-semibold w-[44px] h-[44px]  rounded-md">
+                {item.icon}
+              </div>
+              <div className="p-3">{item.text}</div>
             </div>
-            <div className="p-3">Скачать приложение</div>
-          </div>
-          <div
-            className={`${style.btn} mr-5`}
-            onClick={() => {
-              window.location.href = "https://yande.ru";
-            }}
-          >
-            Скачать из Microsoft Store
-          </div>
-          <div className={style.btn} onClick={() => {}}>
-            Скачать .exe файл
+            {item.btns.map((btn) => (
+              <div className={`${style.btn} mr-5`} onClick={btn.onClick}>
+                {btn.text}
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
